@@ -1,4 +1,5 @@
 const  postPerson = require('../service/personService')
+const  getAll = require('../service/personService')
 const { validationResult } = require('express-validator');
 
 exports.post = (req, res, next) => {
@@ -17,4 +18,8 @@ exports.put = (req, res, next) => {
 exports.delete = (req, res, next) => {
     let id = req.params.id;
     res.status(200).send(`Requisição recebida com sucesso! ${id}`);
+};
+
+exports.getAll = (req, res, next) => {
+    getAll(res)
 };
